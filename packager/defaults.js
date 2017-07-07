@@ -9,7 +9,7 @@
  * @flow
  */
 'use strict';
-
+const path = require('path');
 exports.assetExts =  [
   'bmp', 'gif', 'jpg', 'jpeg', 'png', 'psd', 'svg', 'webp', // Image formats
   'm4v', 'mov', 'mp4', 'mpeg', 'mpg', 'webm', // Video formats
@@ -33,7 +33,9 @@ exports.polyfills = [
   require.resolve('./src/Resolver/polyfills/babelHelpers.js'),
 ];
 
+const namepath ='@zz-app'+path.sep+path.sep+'react-native';
 exports.providesModuleNodeModules = [
+  namepath,
   '@zz-app/react-native',
   'react-native',
   'react-native-windows',
