@@ -371,6 +371,12 @@ class ResolutionRequest {
           path.join(searchPath, realModuleName)
         );
       }
+      const searchPath1 = path.join(currDir, 'node_modules/@zz-app');
+      if (this._dirExists(searchPath1)) {
+        searchQueue.push(
+          path.join(searchPath1, realModuleName)
+        );
+      }
     }
 
     if (this._extraNodeModules) {
