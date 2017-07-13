@@ -31,10 +31,7 @@ function getProjectPath() {
   } else if (__dirname.match(/Pods[\/\\]React[\/\\]packager$/)) {
     // React Native was installed using CocoaPods.
     return path.resolve(__dirname, '../../../..');
-  }else if (__dirname.match(/node_modules[\/\\]@zz-app[\/\\]react-native[\/\\]local-cli[\/\\]core$/)){
-      console.log('right');
-    return path.resolve(__dirname, '../../../../..');
-  } else {
+  }else {
       console.log('wrong');
     return path.resolve(__dirname, '../..');
   }

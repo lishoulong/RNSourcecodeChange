@@ -31,9 +31,6 @@ module.exports = {
     if (__dirname.match(/node_modules[\/\\]react-native[\/\\]packager$/)) {
       // packager is running from node_modules of another project
       return [path.resolve(__dirname, '../../..')];
-    } else if (__dirname.match(/node_modules[\/\\]@zz-app[\/\\]react-native[\/\\]packager$/)) {
-      console.log('ok');
-      return path.resolve(__dirname, '../../../..');
     }else if (__dirname.match(/Pods\/React\/packager$/)) {
       // packager is running from node_modules of another project
       return [path.resolve(__dirname, '../../..')];
