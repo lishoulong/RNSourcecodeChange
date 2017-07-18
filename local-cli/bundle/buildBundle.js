@@ -19,6 +19,7 @@ const TransformCaching = require('metro-bundler/build/lib/TransformCaching');
 
 const outputBundle = require('metro-bundler/build/shared/output/bundle');
 const path = require('path');
+const fs = require('fs');
 const saveAssets = require('./saveAssets');
 const defaultAssetExts = require('metro-bundler/build/defaults').assetExts;
 const defaultSourceExts = require('metro-bundler/build/defaults').sourceExts;
@@ -102,7 +103,11 @@ function buildBundle(
       watch: false,
       workerPath: config.getWorkerPath && config.getWorkerPath(),
     };
-
+    if (typeof args.manifestFile === 'string') {
+       options.manifestReferrence = JSON.parse(
+         fs.readFileSync(args.manifestFile, 'utf-8')
+       );
+    }
     packagerInstance = new Server(options);
     shouldClosePackager = true;
   }

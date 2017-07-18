@@ -35,6 +35,12 @@ module.exports = [
     command: '--sourcemap-output [string]',
     description: 'File name where to store the sourcemap file for resulting bundle, ex. /tmp/groups.map',
   }, {
+    command: '--manifest-output [string]',
+    description: 'File name where to store the manifest file for bundle splitting, ex. ./out/base.manifest.json',
+  },{
+    command: '--manifest-file [path]',
+    description: 'Path to the manifest file if want to split bundle, ex. ./out/base.manifest.json',
+  },{
     command: '--sourcemap-sources-root [string]',
     description: 'Path to make sourcemap\'s sources entries relative to, ex. /root/dir',
   }, {
