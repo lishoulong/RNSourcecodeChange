@@ -51,3 +51,11 @@ const styles = StyleSheet.create({
 });
 
 AppRegistry.registerComponent('HelloWorld', () => HelloWorld);
+const app = document.createElement('div');
+document.body.appendChild(app);
+
+AppRegistry.runApplication('HelloWorld', {
+  rootTag: app
+})
+
+module.exports = HelloWorld;

@@ -86,6 +86,21 @@ function generateProject(destinationRoot, newProjectName, options) {
     console.log('Installing React...');
     execSync(`npm install react@${reactVersion} --save --save-exact`, {stdio: 'inherit'});
   }
+  // 安装web相关依赖
+  const webDeps = (
+    'babel-core@6.16.0 babel-loader@6.2.5 babel-polyfill@6.16.0 babel-preset-stage-1@6.16.0 ' +
+    'haste-resolver-webpack-plugin@0.1.2 json-loader@0.5.2 react-dom@16.0.0-alpha.6 react-hot-loader@1.2.7 '+
+    'webpack@1.12.10 webpack-dev-server@1.14.0 webpack-html-plugin@0.1.1'
+  );
+  if (yarnVersion) {
+    console.log('Adding web...');
+    execSync(`yarn add ${webDeps} --dev --exact`, {stdio: 'inherit'});
+    execSync(`yarn add https://github.com/lishoulong/react-web.git --save --save-exact`, {stdio: 'inherit'});
+  } else {
+    console.log('Installing web...');
+    execSync(`npm install ${webDeps} --dev --exact`, {stdio: 'inherit'});
+    execSync(`npm install https://github.com/lishoulong/react-web.git --save --save-exact`, {stdio: 'inherit'});
+  }
   if (!options['skip-jest']) {
     const jestDeps = (
       `jest babel-jest babel-preset-react-native react-test-renderer@${reactVersion}`
