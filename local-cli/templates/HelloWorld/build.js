@@ -88,7 +88,7 @@ if (!isFileExists(config.baseEntry.index)) {
 }
 
 console.log('Work on root: ' + config.root);
-console.log('Dev mode: ' + config.dev);
+console.log('Dev mode:' + config.dev);
 bundle(config, (err, data) => {
   if (err) throw err;
   console.log('===[Bundle] Finish!===');
