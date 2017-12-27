@@ -1,3 +1,4 @@
-// base modules
-require('react-native');
-require('./js/src/resolveInject');
+import { AppRegistry } from 'react-native';
+import Root from './App';
+
+AppRegistry.registerComponent('HelloWorld', () => Root);
