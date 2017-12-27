@@ -89,7 +89,7 @@ function generateProject(destinationRoot, newProjectName, options) {
   // 安装web相关依赖
   const webDeps = (
     'babel-core@6.26.0 babel-jest@21.2.0 babel-loader@7.1.2 babel-plugin-transform-flow-strip-types@6.22.0 babel-preset-stage-1@6.16.0 babel-preset-react-native@4.0.0' +
-    'babel-preset-es2015-node@6.1.1 babel-traverse@6.24.1 babel-register@6.24.1 haste-resolver-webpack-plugin@0.1.2 json-loader@0.5.2 react-hot-loader@1.2.7 '+
+    'babel-traverse@6.24.1 babel-register@6.24.1 haste-resolver-webpack-plugin@0.1.2 json-loader@0.5.2 react-hot-loader@1.2.7 '+
     'webpack-bundle-analyzer@2.9.0 webpack@3.6.0 webpack-dev-server@2.9.4 webpack-html-plugin@0.1.1 uglify-js@2.8.22 '+
     'minimatch@3.0.3 commander@2.9.0 babylon@6.16.1 '
   );
